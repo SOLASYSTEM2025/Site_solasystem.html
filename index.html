@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sola System</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: #0a0f1c;
+      color: #ffffff;
+      line-height: 1.6;
+      background-image: url('fundo-de-rede-de-tecnologia.avif');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(10, 15, 28, 0.85);
+      z-index: -1;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 40px;
+      background-color: #0d1b2a;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      flex-wrap: wrap;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-container img {
+      max-width: 60px;
+      border-radius: 50%;
+      padding: 5px;
+      background: linear-gradient(135deg, #00d4ff33, #ffffff11);
+      box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .logo-container img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(0, 212, 255, 0.5);
+    }
+
+    .logo-container span {
+      font-size: 1.8em;
+      font-weight: bold;
+      color: #00d4ff;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+
+    nav a {
+      color: #00d4ff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ffffff;
+    }
+
+    section {
+      min-height: 100vh;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 100px 20px;
+      animation: fadeIn 1s ease-in;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    section h2 {
+      color: #00d4ff;
+      margin-bottom: 15px;
+      font-size: 2.5em;
+      text-align: left;
+    }
+
+    section p, section li {
+      font-size: 1.2em;
+      text-align: left;
+      margin-left: 20px;
+    }
+
+    section img {
+      display: block;
+      max-width: 90%;
+      margin: 40px auto 0;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(0, 212, 255, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    section img:hover {
+      transform: scale(1.03);
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li::before {
+      content: "✔ ";
+      color: #00d4ff;
+    }
+
+    footer {
+      background-color: #06101c;
+      color: #bbbbbb;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+    }
+
+    .contato a {
+      color: #00d4ff;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 5px;
+      text-align: left;
+      margin-left: 20px;
+    }
+
+    .contato a:hover {
+      text-decoration: underline;
+    }
+
+    #topo {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #00d4ff;
+      color: #0a0f1c;
+      border: none;
+      padding: 12px 16px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 18px;
+      box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+      z-index: 1001;
+    }
+
+    #topo:hover {
+      background-color: #ffffff;
+      color: #00d4ff;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(-50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    section {
+      animation: slideIn 0.8s ease-in-out;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .logo-container {
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      section h2 {
+        font-size: 1.8em;
+      }
+
+      section p, section li {
+        font-size: 1em;
+        margin-left: 10px;
+      }
+    }
+  </style>
+  <script>
+    window.addEventListener('scroll', () => {
+      document.querySelectorAll('section').forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          section.style.opacity = '1';
+          section.style.transform = 'translateX(0)';
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="logo_sola_system.jpg.jpeg" alt="Logo Sola System">
+      <span>Sola System</span>
+    </div>
+    <nav>
+      <a href="#inicio">Início</a>
+      <a href="#quem-somos">Quem Somos</a>
+      <a href="#missao-visao-valores">Missão, Visão e Valores</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <section id="inicio">
+    <h2>Bem-vindo à Sola System</h2>
+    <p>Conectamos você ao futuro com tecnologia acessível, ética e respeito. Explore nossos serviços e descubra como podemos transformar sua experiência com tecnologia.</p>
+    <img src="imagem_inicio.png" alt="imagem_inicio">
+  </section>
+
+  <section id="quem-somos">
+    <h2>Quem Somos</h2>
+    <p>Somos uma empresa jovem e inovadora, apaixonada por tecnologia e comprometida em oferecer soluções de qualidade com empatia e transparência. Atuamos com manutenção de dispositivos, montagem de setups, desenvolvimento de sites e sistemas personalizados.</p>
+    <img src="imagem_quem_somos.png" alt="imagem_quem_somos">
+  </section>
+
+  <section id="missao-visao-valores">
+    <h2>Missão, Visão e Valores</h2>
+    <p><strong>🌟 Missão:</strong> Oferecer soluções tecnológicas acessíveis e de alta qualidade, com compromisso ético, excelência no atendimento e propósito em cada serviço prestado — sempre colocando as pessoas em primeiro lugar.</p>
+    <p><strong>🔭 Visão:</strong> Ser referência local e digital em serviços de tecnologia com propósito, reconhecida pela confiança, inovação e impacto positivo na vida das pessoas.</p>
+    <p><strong>💠 Valores:</strong></p>
+    <ul>
+      <li><strong>Propósito:</strong> Trabalhamos com sentido e responsabilidade no que fazemos.</li>
+      <li><strong>Excelência:</strong> Entregamos o melhor resultado possível, com dedicação e cuidado.</li>
+      <li><strong>Transparência:</strong> Comunicação clara e ética com nossos clientes.</li>
+      <li><strong>Acessibilidade:</strong> Preços justos, linguagem simples e atendimento próximo.</li>
+      <li><strong>Inovação:</strong> Estamos sempre evoluindo com a tecnologia.</li>
+      <li><strong>Respeito e Empatia:</strong> Valorizamos cada cliente e suas necessidades.</li>
+    </ul>
+  </section>
+
+  <section id="servicos">
+    <h2>Serviços Prestados</h2>
+    <ul>
+      <li>🛠️ Manutenção, montagem e limpeza de computadores e notebooks</li>
+      <li>🖥️ Montagem de setups personalizados</li>
+      <li>📊 Orçamentos técnicos com transparência</li>
+      <li>🌐 Desenvolvimento de sites e sistemas web e redes</li>
+      <li>🤝 Suporte técnico e consultoria em tecnologia</li>
+      <li>📞 Entre em contato para nos descrever qual serviço deseja</li>
+    </ul>
+    <img src="imagem_servicos_prestados.png" alt="imagem_servicos_prestados">
+  </section>
+
+  <section id="contato">
+    <h2>Contato</h2>
+    <div class="contato">
+      <a href="mailto:solasystemtech@gmail.com"><i class="fas fa-envelope"></i> contato@solasystem.com</a>
+      <a href="https://wa.me/seunumero"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      <a href="https://www.instagram.com/solasystembr" target="_blank"><i class="fab fa-instagram"></i> @solasystem</a>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Sola System. Todos os direitos reservados.
+  </footer>
+
+  <button id="topo" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+</body>
+</html>
