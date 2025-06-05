@@ -291,7 +291,7 @@
   <section id="contato">
     <h2>Contato</h2>
     <div class="contato">
-      <a href="mailto:contato@solasystem.com"><i class="fas fa-envelope"></i> contato@solasystem.com</a>
+      <a href="mailto:solasystemtech@gmail.com"><i class="fas fa-envelope"></i> contato@solasystem.com</a>
       <a href="https://wa.me/seunumero"><i class="fab fa-whatsapp"></i> WhatsApp</a>
       <a href="https://www.instagram.com/solasystem" target="_blank"><i class="fab fa-instagram"></i> @solasystem</a>
     </div>
