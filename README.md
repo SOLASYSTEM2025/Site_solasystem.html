@@ -278,10 +278,10 @@
   <section id="servicos">
     <h2>Serviços Prestados</h2>
     <ul>
-      <li>🛠️ Manutenção e limpeza de computadores e notebooks</li>
+      <li>🛠️ Manutenção, montagem e limpeza de computadores e notebooks</li>
       <li>🖥️ Montagem de setups personalizados</li>
       <li>📊 Orçamentos técnicos com transparência</li>
-      <li>🌐 Desenvolvimento de sites e sistemas web</li>
+      <li>🌐 Desenvolvimento de sites e sistemas web e redes</li>
       <li>🤝 Suporte técnico e consultoria em tecnologia</li>
       <li>📞 Entre em contato para nos descrever qual serviço deseja</li>
     </ul>
@@ -293,7 +293,7 @@
     <div class="contato">
       <a href="mailto:solasystemtech@gmail.com"><i class="fas fa-envelope"></i> contato@solasystem.com</a>
       <a href="https://wa.me/seunumero"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-      <a href="https://www.instagram.com/solasystem" target="_blank"><i class="fab fa-instagram"></i> @solasystem</a>
+      <a href="https://www.instagram.com/solasystembr" target="_blank"><i class="fab fa-instagram"></i> @solasystem</a>
     </div>
   </section>
 
